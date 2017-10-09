@@ -23,6 +23,8 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <string>
+#include <typeinfo>
 
 using namespace std;
 
@@ -53,6 +55,7 @@ class ExprTree {
     void showStructure () const;
 
 	bool isEmpty() const;
+    bool isDigit(const char&) const;
 
   private:
 
@@ -70,8 +73,13 @@ class ExprTree {
 
     // Recursive helper functions for the public member functions -- insert
     // prototypes of these functions here.
+    void assignementHelper(ExprTreeNode*&, ExprTreeNode*);
 	void buildHelper(ExprTreeNode*&);
+    std::string expressionHelper(ExprTreeNode*) const;
+    bool isEquivHelper(ExprTreeNode*, ExprTreeNode*) const;
     DataType evaluateHelper(ExprTreeNode*) const;
+    bool boolHelper(ExprTreeNode*) const;
+    void commuteHelper(ExprTreeNode*);
 	void showHelper(ExprTreeNode*, int) const;
 	void clearHelper(ExprTreeNode*);
 

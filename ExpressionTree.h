@@ -24,7 +24,6 @@
 #include <stdexcept>
 #include <iostream>
 #include <string>
-#include <typeinfo>
 
 using namespace std;
 
@@ -77,8 +76,8 @@ class ExprTree {
 	void buildHelper(ExprTreeNode*&);
     std::string expressionHelper(ExprTreeNode*) const;
     bool isEquivHelper(ExprTreeNode*, ExprTreeNode*) const;
+    bool isCommuteHelper(ExprTreeNode*, ExprTreeNode*) const;
     DataType evaluateHelper(ExprTreeNode*) const;
-    bool boolHelper(ExprTreeNode*) const;
     void commuteHelper(ExprTreeNode*);
 	void showHelper(ExprTreeNode*, int) const;
 	void clearHelper(ExprTreeNode*);
